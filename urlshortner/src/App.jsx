@@ -45,9 +45,18 @@ function App() {
             <span ref={a}>{short.Short_url}</span>
           </a>
         </p>
-        <button onClick={() => navigator.clipboard.writeText(short.Short_url)}>
+        <button
+          onClick={() => {
+            navigator.clipboard.writeText(short.Short_url);
+            document.getElementById("message").style.display = "block";
+            setTimeout(() => {
+              document.getElementById("message").style.display = "none";
+            }, 2000);
+          }}
+        >
           Copy Url
         </button>
+        <span id="message">Link copied !!</span>
       </div>
     </div>
   );

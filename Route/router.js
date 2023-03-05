@@ -31,7 +31,7 @@ router.post("/", async (req, res) => {
     let obj = { Full_url: req.body.Full_url, Short_url: short_url };
     const data = await modelUrl.create(obj);
     // console.log(data);
-    // console.log(req.headers.host);
+    console.log(req.headers.host);
     res.status(200).send(data);
     // return res.status(200).send(obj);
   } catch (error) {

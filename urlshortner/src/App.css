@@ -63,14 +63,27 @@ input {
   min-width: 5rem;
 }
 .Short_Url_Box {
-  position: absolute;
+  position: relative;
+  top: 20rem;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 20px;
+  align-items: center;
 }
 
 p {
-  position: relative;
   buttom: 13rem;
-  top: 20rem;
   left: 10rem;
   font-size: 35px;
   font-weight: 700;
+}
+#message {
+  display: none;
+  background: #211e5dc7;
+  /* margin: 20px 0; */
+  color: #ffffff;
+  padding: 20px;
+  width: 30%;
+  text-align: center;
 }
