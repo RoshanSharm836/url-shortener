@@ -9,7 +9,7 @@ function App() {
 
   const handle = async () => {
     if (data.Full_url !== "") {
-      await axios.post("http://localhost:3000/api", data).then((res) => {
+      await axios.post(`/api`, data).then((res) => {
         // setShort(...res.data);
         setShort(res.data);
       });
