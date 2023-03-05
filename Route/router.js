@@ -17,19 +17,21 @@ router.get("/:param", async (req, res) => {
   try {
     // console.log(req.params);
     const data = await modelUrl.findOne({
-      Short_url: "http://localhost:3000" + "/api/" + req.params.param,
+      Short_url: req.headers.host + "/api/" + req.params.param,
     });
+    // console.log(res);
     return res.redirect(data.Full_url);
   } catch (error) {
     res.status(500).send(error.message);
   }
 });
 router.post("/", async (req, res) => {
-  let short_url = "http://localhost:3000" + "/api/" + stringgenerator();
+  let short_url = req.headers.host + "/api/" + stringgenerator();
   try {
     let obj = { Full_url: req.body.Full_url, Short_url: short_url };
     const data = await modelUrl.create(obj);
     // console.log(data);
+    // console.log(req.headers.host);
     res.status(200).send(data);
     // return res.status(200).send(obj);
   } catch (error) {
