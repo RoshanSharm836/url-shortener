@@ -25,6 +25,14 @@ router.get("/:param", async (req, res) => {
     res.status(500).send(error.message);
   }
 });
+router.get("/", async (req, res) => {
+  try {
+    const data = await modelUrl.find();
+    res.send(data);
+  } catch (error) {
+    res.status(500).send(error.message);
+  }
+});
 router.post("/", async (req, res) => {
   let short_url = req.headers.host + "/api/" + stringgenerator();
   try {
