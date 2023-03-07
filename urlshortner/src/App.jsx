@@ -6,17 +6,26 @@ function App() {
   const a = useRef(null);
   const [data, setData] = useState({ Full_url: "", Short_url: "" });
   const [short, setShort] = useState({});
-
+  const [displayBtm, setDisplayBtm] = useState(false);
   const handle = async () => {
     if (data.Full_url !== "") {
       await axios.post(`/api`, data).then((res) => {
         // setShort(...res.data);
         setShort(res.data);
+        setDisplayBtm(true);
       });
       console.log(short);
     } else {
       alert("Enter Url");
     }
+  };
+
+  const copy = () => {
+    navigator.clipboard.writeText(short.Short_url);
+    document.getElementById("message").style.display = "block";
+    setTimeout(() => {
+      document.getElementById("message").style.display = "none";
+    }, 2000);
   };
 
   return (
@@ -45,17 +54,13 @@ function App() {
             <span ref={a}>{short.Short_url}</span>
           </a>
         </p>
-        <button
-          onClick={() => {
-            navigator.clipboard.writeText(short.Short_url);
-            document.getElementById("message").style.display = "block";
-            setTimeout(() => {
-              document.getElementById("message").style.display = "none";
-            }, 2000);
-          }}
-        >
-          Copy Url
-        </button>
+        {displayBtm === true ? (
+          <>
+            <button onClick={copy}>Copy Url</button>
+          </>
+        ) : (
+          <></>
+        )}
         <span id="message">Link copied !!</span>
       </div>
     </div>
