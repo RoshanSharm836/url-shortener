@@ -73,10 +73,10 @@ input {
 }
 
 p {
-  /* buttom: 13rem; */
-  left: 10rem;
-  font-size: 35px;
+  font-size: 30px;
+  padding: 0 10px;
   font-weight: 700;
+  left: 10rem;
 }
 #message {
   display: none;
