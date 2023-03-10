@@ -1,5 +1,5 @@
 import logo from "./logo.svg";
-import "./App.css";
+// import "./App.css";
 import axios from "axios";
 import { useRef, useState } from "react";
 function App() {
@@ -30,7 +30,7 @@ function App() {
 
   return (
     <div className="box">
-      <div className="container">
+      <di className="container">
         <h1 className="heading">Url shortner</h1>
         <div className="input">
           <input
@@ -46,7 +46,7 @@ function App() {
             Short
           </button>
         </div>
-      </div>
+      </di>
       <div className="Short_Url_Box">
         <p>
           <span>Short-Url :</span>

@@ -1,0 +1,219 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato&family=Roboto:wght@100&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  border: none;
+  font-family: "Lato", sans-serif;
+}
+a {
+  text-decoration: none;
+}
+.top {
+  background-color: aliceblue;
+  min-height: 50vh;
+  flex: 1;
+}
+.down {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(189, 203, 215);
+  min-height: 50vh;
+  flex: 1;
+}
+.layout {
+  display: flex;
+  flex-direction: column;
+}
+.navbar {
+  display: flex;
+  gap: 20px;
+  width: 80%;
+  margin: auto;
+  padding: 10px 0;
+  font-weight: 700;
+  align-items: center;
+}
+.navbar > span:first-child {
+  color: rgb(0, 0, 0);
+  font-size: 3vw;
+  /* Set the background color */
+  background: linear-gradient(to right, #81e7f9 0%, #3176b7 100%);
+  /* Mask the color to the text, and remove the rest  */
+  -webkit-background-clip: text;
+  /* Make the text fill color value transparent so the masked background color comes through */
+  -webkit-text-fill-color: transparent;
+}
+.main {
+  display: flex;
+  width: 80%;
+  margin: auto;
+}
+.main_right {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+.main_left {
+  width: 100%;
+}
+.main_left > img {
+  width: 100%;
+}
+.main_right > h1 {
+  font-size: 5vw;
+  color: rgba(44, 43, 43, 0.834);
+  text-align: center;
+}
+
+.main_right > p {
+  font-size: 2vw;
+  color: rgb(28, 27, 27);
+  text-align: center;
+}
+
+.input {
+  position: relative;
+  top: -10px;
+  background-image: url("https://img.freepik.com/free-vector/ocean-sea-blue-wave-with-ripples-background_1035-23387.jpg?w=826&t=st=1678472372~exp=1678472972~hmac=af88bc9b5dba911ebfdf5aceb7bb06c8ac2f293855714905f041d265b511e3b5");
+  padding: 20px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 75%;
+  margin: auto;
+  gap: 10px;
+  border-radius: 5px;
+  display: flex;
+}
+.input > input {
+  border-radius: 10px;
+  flex: 3;
+  padding: 20px 0;
+}
+.input > button {
+  border-radius: 10px;
+  padding: 20px 0;
+  flex: 1;
+}
+.btm:hover {
+  background-color: rgba(0, 255, 255, 0.462);
+  color: #ffffff;
+  transition: ease 1s;
+}
+.btm:active {
+  transform: translateY(4px);
+}
+input:focus,
+button:focus {
+  outline: none !important;
+  border: 2px solid rgba(0, 255, 255, 0.462);
+  /* box-shadow: 0 0 10px ; */
+}
+.main-card {
+  width: 80%;
+  margin: auto;
+  margin-bottom: 20px;
+  flex: 3;
+  display: flex;
+  gap: 20px;
+  justify-content: space-evenly;
+  flex-direction: column;
+}
+.card_heading > h1 {
+  text-align: center;
+  font-size: 4vw;
+  color: rgb(44 43 43 / 87%);
+}
+.card > div {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.card {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  text-align: center;
+  gap: 10px;
+
+  color: rgba(44, 43, 43, 0.834);
+}
+.card-item {
+  color: #ffffffa8;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  min-height: 400px;
+}
+.card-item:nth-child(odd) {
+  background-color: #59a5ed4d;
+}
+.card-item:nth-child(even) {
+  background-color: #66cdea61;
+}
+.footer {
+  position: relative;
+  bottom: 0;
+  padding: 20px 0 10px 0;
+}
+
+.footer > div:first-child {
+  color: aliceblue;
+  font-weight: 700;
+  font-size: 3vw;
+  text-align: center;
+  background-image: url("https://img.freepik.com/free-vector/ocean-sea-blue-wave-with-ripples-background_1035-23387.jpg?w=826&t=st=1678472372~exp=1678472972~hmac=af88bc9b5dba911ebfdf5aceb7bb06c8ac2f293855714905f041d265b511e3b5");
+  padding: 20px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.Url {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  margin: 20px auto;
+  font-size: 4vw;
+  color: rgb(44 43 43 / 87%);
+  justify-content: center;
+  align-items: center;
+}
+.Url_link {
+  align-items: center;
+  justify-content: space-between;
+  display: flex;
+  width: 90%;
+}
+#message {
+  display: none;
+}
+
+/* media */
+@media screen and (max-width: 880px) {
+  .main {
+    flex-direction: column;
+  }
+  .card {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .card-item {
+    min-height: 300px;
+  }
+  .card-item > img {
+    width: 25%;
+  }
+}
+@media screen and (max-width: 480px) {
+  .main {
+    flex-direction: column;
+  }
+  .card {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .card-item {
+    min-height: 200px;
+  }
+  .card-item > img {
+    width: 25%;
+  }
+}
